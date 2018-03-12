@@ -146,7 +146,7 @@ namespace TestSite.Areas.admin.Controllers
                 }
             }
 
-            return View("~/Areas/admin/Views/Bikes/Create.cshtml");
+            return View("~/Areas/admin/Views/Bikes/Index.cshtml");
         }
         [HttpGet]
         public ActionResult Edit(int BikeID)
