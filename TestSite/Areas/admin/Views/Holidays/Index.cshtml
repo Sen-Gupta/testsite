@@ -1,8 +1,37 @@
-﻿
+﻿@using TestSite.ViewModels
+@model List<HolidaysModel>
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Index</h2>
 List All Holidays Here!
+
+<ul>
+    <li>@Html.ActionLink("View Holidays", "List", "Holidays")</li>
+    <li>@Html.ActionLink("Create Holidays ", "Create", "Holidays")</li>
+
+</ul>
+
+@if (Model != null)
+    {
+        <h2>Holidays Lists</h2>
+        foreach (HolidaysModel hlm in Model)
+        {
+            <div>
+                <ul>
+                    <li>
+                        @hlm.HolidayName
+                        <span>@Html.ActionLink("Delete", "Delete", "Holidays", new { HolidayID = hlm.HolidayID }, null)</span>
+                        <span>@Html.ActionLink("Edit", "Edit", "Holidays", new { HolidayID = hlm.HolidayID }, null)</span>
+                    </li>
+                </ul>
+            </div>
+    }
+}
+else
+{
+    <p>Nothing to show here</p>
+}
+

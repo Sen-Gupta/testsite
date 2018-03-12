@@ -1,0 +1,30 @@
+﻿@using TestSite.ViewModels
+@model HolidaysModel
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+@if (ViewBag.Feedback != null)
+{
+    <h1>@ViewBag.Feedback</h1>
+    @Html.ActionLink("Back to List", "List", "Holidays")
+}
+else
+{
+
+    if (Model != null)
+    {
+        <h2>Are you sure you want to Delete</h2>
+        @Html.ActionLink("Delete", "Delete", "Holidays", new { HolidayID = Model.HolidayID, Confirm = true }, null)
+        @Html.ActionLink("Cancel", "List", "Holidays")
+        @Model.HolidayID
+    }
+    else
+    {
+        <span>There is nothing to delete, Please go back and select again.</span>
+    }
+
+}
+
+

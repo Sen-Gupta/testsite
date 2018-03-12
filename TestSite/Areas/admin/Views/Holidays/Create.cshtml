@@ -1,0 +1,63 @@
+﻿@using TestSite.ViewModels
+@model List<HolidayListsModel>
+
+@{
+    ViewBag.Title = "Create";
+}
+<script>
+
+    function s() {
+        debugger;
+        var e = document.getElementById("ddlViewBy");
+        var strUser = e.options[e.selectedIndex].value;
+    }
+  
+</script>
+
+<h2>Create</h2>
+<h2>Create</h2>
+@if (ViewBag.Feedback != null)
+{
+    <strong>@ViewBag.Feedback</strong>
+}
+
+else
+{
+    using (Html.BeginForm("Create", "Holidays", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.Label("HolidayName", "Holiday Name")
+        <select class="form-control"id="ddlViewBy" name="holidaylist">
+            <option>Select HolidayList</option>
+            @foreach (HolidayListsModel hlm in Model)
+            {
+                <option value="@hlm.HolidayListID" onchange="s()">@hlm.HolidayListName</option>
+
+            }
+        </select> <br />
+
+        
+        @*@Html.TextBox("HolidayListID", @ViewBag.Id, new { @class = "hidden" })<br />*@
+
+        @Html.Label("HolidayName", "Holiday Name")
+        @Html.TextArea("HolidayName")<br />
+
+        @Html.Label("HolidayDetails", "Holiday List Details")
+        @Html.TextArea("HolidayDetails")<br />
+
+        @Html.Label("StartDate", "Holiday Start Date")
+        @Html.TextBox("StartDate") <br />
+
+        @Html.Label("PricePerPerson", "Price Per Person")
+        @Html.TextBox("PricePerPerson")<br />
+
+        @Html.Label("HolidayImage", "Holiday Image")
+        @Html.TextBox("HolidayImage", "", new { type = "file" })<br />
+
+
+
+        <input type="submit" value="Create Holiday List" />
+    }
+
+}
+
+

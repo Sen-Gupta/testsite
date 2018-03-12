@@ -153,6 +153,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\HolidayListsModel.cs" />
+    <Compile Include="ViewModels\HolidaysModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -175,6 +176,10 @@
     <Content Include="Areas\admin\Views\HolidayLists\Index.cshtml" />
     <Content Include="Areas\admin\Views\Bikes\Index.cshtml" />
     <Content Include="Areas\admin\Views\Holidays\Index.cshtml" />
+    <Content Include="Areas\admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\admin\Views\Holidays\Create.cshtml" />
+    <Content Include="Areas\admin\Views\Holidays\Edit.cshtml" />
+    <Content Include="Areas\admin\Views\Holidays\Delete.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
