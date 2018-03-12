@@ -4,18 +4,10 @@
 @{
     ViewBag.Title = "Create";
 }
-<script>
 
-    function s() {
-        debugger;
-        var e = document.getElementById("ddlViewBy");
-        var strUser = e.options[e.selectedIndex].value;
-    }
-  
-</script>
 
 <h2>Create</h2>
-<h2>Create</h2>
+
 @if (ViewBag.Feedback != null)
 {
     <strong>@ViewBag.Feedback</strong>
@@ -30,7 +22,7 @@ else
             <option>Select HolidayList</option>
             @foreach (HolidayListsModel hlm in Model)
             {
-                <option value="@hlm.HolidayListID" onchange="s()">@hlm.HolidayListName</option>
+                <option value="@hlm.HolidayListID">@hlm.HolidayListName</option>
 
             }
         </select> <br />
@@ -39,7 +31,7 @@ else
         @*@Html.TextBox("HolidayListID", @ViewBag.Id, new { @class = "hidden" })<br />*@
 
         @Html.Label("HolidayName", "Holiday Name")
-        @Html.TextArea("HolidayName")<br />
+        @Html.TextBox("HolidayName")<br />
 
         @Html.Label("HolidayDetails", "Holiday List Details")
         @Html.TextArea("HolidayDetails")<br />
@@ -55,7 +47,7 @@ else
 
 
 
-        <input type="submit" value="Create Holiday List" />
+        <input type="submit" value="Create Holiday" />
     }
 
 }
