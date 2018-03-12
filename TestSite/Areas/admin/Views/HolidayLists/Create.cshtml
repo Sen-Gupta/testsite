@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+@if (ViewBag.Feedback != null)
+{
+    <strong>@ViewBag.Feedback</strong>
+}
+
+
+@using (Html.BeginForm("Create","HolidayLists", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.Label("HolidayListName", "Holiday List Name")
+    @Html.TextBox("HolidayListName")<br/>
+
+    @Html.Label("HolidayListDetails", "Holiday List Details")
+    @Html.TextArea("HolidayListDetails")<br />
+
+    @Html.Label("Age", "Age")
+    @Html.TextBox("Age")<br />
+
+    @Html.Label("HolidayListImage", "Holiday List Image")
+    @Html.TextBox("HolidayListImage","", new { type = "file" })<br/> 
+       
+
+    <input type="submit" value="Create Holiday List" />
+}

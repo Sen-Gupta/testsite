@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -168,6 +169,12 @@
     <Content Include="Areas\admin\Views\web.config" />
     <Content Include="Areas\admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\admin\Views\Manage\Index.cshtml" />
+    <Content Include="Areas\admin\Views\HolidayLists\Create.cshtml" />
+    <Content Include="Areas\admin\Views\HolidayLists\Delete.cshtml" />
+    <Content Include="Areas\admin\Views\HolidayLists\Edit.cshtml" />
+    <Content Include="Areas\admin\Views\HolidayLists\Index.cshtml" />
+    <Content Include="Areas\admin\Views\Bikes\Index.cshtml" />
+    <Content Include="Areas\admin\Views\Holidays\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -228,7 +235,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>57037</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

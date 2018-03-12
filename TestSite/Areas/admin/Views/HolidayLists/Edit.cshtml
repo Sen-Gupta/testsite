@@ -1,0 +1,40 @@
+﻿@using TestSite.ViewModels
+@model HolidayListsModel
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@if (ViewBag.Feedback != null)
+{
+    <h1>@ViewBag.Feedback</h1>
+    @Html.ActionLink("Back to List", "List", "HolidayLists")
+}
+else
+{
+
+    if (Model != null)
+    {
+        <h2>Edit Holiday List here</h2>
+        using (Html.BeginForm("Edit", "HolidayLists", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.Label("HolidayListID");
+            @Html.TextBox("HolidayListID", Model.HolidayListID, new { @readonly = "readonly" })<br />
+
+            @Html.Label("HolidayListName", "Holiday List Name")
+            @Html.TextBox("HolidayListName",Model.HolidayListName)<br />
+
+            @Html.Label("HolidayListDetails", "Holiday List Details")
+            @Html.TextArea("HolidayListDetails", Model.HolidayListDetails)<br />
+
+            <input type="submit" value="Create Holiday List" />
+        }
+    }
+    else
+    {
+        <h2>There is nothing to Edit here</h2>
+        <p>Please go back to the list and try again:@Html.ActionLink("Back to List", "List", "HolidayLists")</p>
+
+    }
+}
+
