@@ -7,7 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using TestSite.Areas.admin.ViewModels;
-using TestSite.ViewModels;
+
 
 namespace TestSite.Areas.admin.Controllers
 {

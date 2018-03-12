@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using System.Data.SqlClient;
 using System.Data;
 using System.Configuration;
-using TestSite.ViewModels;
+using TestSite.Areas.admin.ViewModels;
 
 namespace TestSite.Areas.admin.Controllers
 {
@@ -76,7 +76,7 @@ namespace TestSite.Areas.admin.Controllers
             return View("~/Areas/admin/Views/HolidayLists/Create.cshtml");
         }
         [HttpPost]
-        public ActionResult Create(int age,string HolidayListName, string HolidayListDetails, HttpPostedFileBase HolidayListImage)
+        public ActionResult Create(string HolidayListName, string HolidayListDetails, HttpPostedFileBase HolidayListImage)
         {
             //Read the FileStream Into ByteArray, equivalent to SQL Image Data Type
             byte[] buffer = new byte[HolidayListImage.ContentLength];

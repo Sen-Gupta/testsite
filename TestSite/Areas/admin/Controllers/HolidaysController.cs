@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using TestSite.ViewModels;
+using TestSite.Areas.admin.ViewModels;
 
 namespace TestSite.Areas.admin.Controllers
 {

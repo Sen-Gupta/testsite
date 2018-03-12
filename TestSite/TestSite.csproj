@@ -153,8 +153,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\HolidayListsModel.cs" />
-    <Compile Include="ViewModels\HolidaysModel.cs" />
+    <Compile Include="Areas\admin\ViewModels\HolidayListsModel.cs" />
+    <Compile Include="Areas\admin\ViewModels\HolidaysModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -218,6 +218,7 @@
     <Folder Include="Areas\admin\Models\" />
     <Folder Include="Controllers\Admin\" />
     <Folder Include="Models\" />
+    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
