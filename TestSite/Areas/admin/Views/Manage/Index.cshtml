@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "Admin";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Admin</h2>
+<b>This is our Admin Page!</b>
+<ul>
+    <li>@Html.ActionLink("Manage Holiday Lists", "Index", "HolidayLists")</li>
+    <li>@Html.ActionLink("Manage Holidays", "Index", "Holidays")</li>
+    <li>@Html.ActionLink("Manage Bikes", "Index", "Bikes")</li>
+</ul>
+
