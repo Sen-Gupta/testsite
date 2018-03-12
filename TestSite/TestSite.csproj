@@ -144,9 +144,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\admin\adminAreaRegistration.cs" />
     <Compile Include="Areas\admin\Controllers\ManageController.cs" />
-    <Compile Include="Controllers\Admin\BikesController.cs" />
-    <Compile Include="Controllers\Admin\HolidayListsController.cs" />
-    <Compile Include="Controllers\Admin\HolidaysController.cs" />
+    <Compile Include="Areas\admin\Controllers\BikesController.cs" />
+    <Compile Include="Areas\admin\Controllers\HolidayListsController.cs" />
+    <Compile Include="Areas\admin\Controllers\HolidaysController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -204,6 +204,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\admin\Models\" />
+    <Folder Include="Controllers\Admin\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

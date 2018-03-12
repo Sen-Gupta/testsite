@@ -8,8 +8,9 @@ using System.Data;
 using System.Configuration;
 using TestSite.ViewModels;
 
-namespace TestSite.Controllers.Admin
+namespace TestSite.Areas.admin.Controllers
 {
+    [RouteArea("admin")]
     public class HolidayListsController : Controller
     {
         SqlConnection traincoreCon = new SqlConnection(ConfigurationManager.ConnectionStrings["traincore"].ConnectionString);
@@ -17,7 +18,7 @@ namespace TestSite.Controllers.Admin
         [HttpGet]
         public ActionResult Index()
         {
-            return View("~/Views/admin/HolidayLists/Index.cshtml");
+            return View("~/Areas/admin/Views/HolidayLists/Index.cshtml");
         }
 
         [HttpGet]
@@ -63,7 +64,7 @@ namespace TestSite.Controllers.Admin
                 }
             }
            
-            return View("~/Views/admin/HolidayLists/Index.cshtml",hl);
+            return View("~/Areas/admin/Views/HolidayLists/Index.cshtml",hl);
         }
 
 
@@ -72,7 +73,7 @@ namespace TestSite.Controllers.Admin
         public ActionResult Create()
         {
 
-            return View("~/Views/admin/HolidayLists/Create.cshtml");
+            return View("~/Areas/admin/Views/HolidayLists/Create.cshtml");
         }
         [HttpPost]
         public ActionResult Create(int age,string HolidayListName, string HolidayListDetails, HttpPostedFileBase HolidayListImage)
@@ -115,7 +116,7 @@ namespace TestSite.Controllers.Admin
                 }
             }
           
-            return View("~/Views/admin/HolidayLists/Create.cshtml");
+            return View("~/Areas/admin/Views/HolidayLists/Create.cshtml");
         }
         [HttpGet]
         public ActionResult Edit(int HolidayListID)
@@ -160,7 +161,7 @@ namespace TestSite.Controllers.Admin
                     traincoreCon.Close();
                 }
             }
-            return View("~/Views/admin/HolidayLists/Edit.cshtml",hm);
+            return View("~/Areas/admin/Views/HolidayLists/Edit.cshtml", hm);
         }
 
         [HttpPost]
@@ -197,7 +198,7 @@ namespace TestSite.Controllers.Admin
                     traincoreCon.Close();
                 }
             }
-            return View("~/Views/admin/HolidayLists/Edit.cshtml");
+            return View("~/Areas/admin/Views/HolidayLists/Edit.cshtml");
         }
 
 
@@ -233,7 +234,7 @@ namespace TestSite.Controllers.Admin
                
                 hm.HolidayListID = HolidayListID;
             }
-            return View("~/Views/admin/HolidayLists/Delete.cshtml", hm);
+            return View("~/Areas/admin/Views/HolidayLists/Delete.cshtml", hm);
         }
 
     }

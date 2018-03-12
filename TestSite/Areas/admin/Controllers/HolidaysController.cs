@@ -4,14 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace TestSite.Controllers.Admin
+namespace TestSite.Areas.admin.Controllers
 {
-    public class BikesController : Controller
+    public class HolidaysController : Controller
     {
-        // GET: Bikes
+        // GET: Holidays
         public ActionResult Index()
         {
-            return View("~/Views/admin/Bikes/Index.cshtml");
+            return View("~/Views/admin/Holidays/Index.cshtml");
         }
     }
 }
