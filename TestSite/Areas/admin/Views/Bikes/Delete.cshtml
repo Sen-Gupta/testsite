@@ -1,0 +1,29 @@
+﻿@using TestSite.Areas.admin.ViewModels
+@model BikeModel
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+@if (ViewBag.Feedback != null)
+{
+    <h1>@ViewBag.Feedback</h1>
+    @Html.ActionLink("Back to List", "List", "Bikes")
+}
+else
+{
+
+    if (Model != null)
+    {
+        <h2>Are you sure you want to Delete</h2>
+        @Html.ActionLink("Delete", "Delete", "Bikes", new { BikeID = Model.BikeID, Confirm = true }, null)
+        @Html.ActionLink("Cancel", "List", "Bikes")
+        @Model.BikeID
+    }
+    else
+    {
+        <span>There is nothing to delete, Please go back and select again.</span>
+    }
+
+}
+
+

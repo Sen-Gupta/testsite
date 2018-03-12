@@ -1,0 +1,40 @@
+﻿@using TestSite.Areas.admin.ViewModels
+@model BikeModel
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+@if (ViewBag.Feedback != null)
+{
+    <h1>@ViewBag.Feedback</h1>
+    @Html.ActionLink("Back to List", "List", "Bikes")
+}
+else
+{
+
+    if (Model != null)
+    {
+    <h2>Edit Bike List here</h2>
+        using (Html.BeginForm("Edit", "Bikes", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.Label("BikeID");
+            @Html.TextBox("BikeID", Model.BikeID, new { @readonly = "readonly" })<br />
+
+            @Html.Label("BikeName", "Bike Name")
+            @Html.TextBox("BikeName", Model.BikeName)<br />
+
+            @Html.Label("BikeDetails", "Bike Details")
+            @Html.TextArea("BikeDetails", Model.BikeDetails)<br />
+
+            <input type="submit" value="Update Bike List" />
+        }
+    }
+    else
+    {
+        <h2>There is nothing to Edit here</h2>
+        <p>Please go back to the list and try again:@Html.ActionLink("Back to List", "List", "Bikes")</p>
+
+    }
+}

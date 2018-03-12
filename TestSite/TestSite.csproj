@@ -147,6 +147,7 @@
     <Compile Include="Areas\admin\Controllers\BikesController.cs" />
     <Compile Include="Areas\admin\Controllers\HolidayListsController.cs" />
     <Compile Include="Areas\admin\Controllers\HolidaysController.cs" />
+    <Compile Include="Areas\admin\ViewModels\BikeModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -175,6 +176,10 @@
     <Content Include="Areas\admin\Views\HolidayLists\Index.cshtml" />
     <Content Include="Areas\admin\Views\Bikes\Index.cshtml" />
     <Content Include="Areas\admin\Views\Holidays\Index.cshtml" />
+    <Content Include="Areas\admin\Views\Bikes\Create.cshtml" />
+    <Content Include="Areas\admin\Views\Bikes\Edit.cshtml" />
+    <Content Include="Areas\admin\Views\Bikes\Delete.cshtml" />
+    <Content Include="Areas\admin\Views\Bikes\List.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -186,7 +191,9 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

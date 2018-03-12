@@ -1,8 +1,32 @@
-﻿
+﻿@using TestSite.Areas.admin.ViewModels
+@model List<BikeModel>
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Index</h2>
 Manage Bikes Here!
+
+<ul>
+    <li>@Html.ActionLink("View Bikes", "List", "Bikes")</li>
+    <li>@Html.ActionLink("Create Bike", "Create", "Bikes")</li>
+
+</ul>
+
+@if (Model != null)
+{
+    <h2>Bike Lists</h2>
+    foreach (BikeModel bik in Model)
+    {
+        <div>
+            <ul>
+                <li>
+                    @bik.BikeName
+                    <span>@Html.ActionLink("Delete", "Delete", "Bikes", new { BikeID = bik.BikeID, Confirm = false }, null)</span>
+                    <span>@Html.ActionLink("Edit", "Edit", "Bikes", new { BikeID = bik.BikeID }, null)</span>
+                </li>
+            </ul>
+        </div>
+    }
+}
