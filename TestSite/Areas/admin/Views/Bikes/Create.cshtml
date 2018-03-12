@@ -1,0 +1,38 @@
+﻿@using TestSite.Areas.admin.ViewModels
+@model List<BikeModel>
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm("Create", "Bikes", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.Label("BikeName", "Bike Name")
+    @Html.TextBox("BikeName")<br />
+
+    @Html.Label("HolidayName", "Holiday List Name")
+                             <select id="SltHoliday" name="SltHoliday">
+                                 @foreach (BikeModel item in Model)
+                                 {
+                                     
+                                 <option value="@item.HolidayID">@item.HolidayName</option>
+
+                                 }
+                             </select>
+<br />
+@Html.Label("BikeDetails", "Bike Details")
+@Html.TextArea("BikeDetails")<br />
+
+@Html.Label("BikeImage", "Bike Image")
+@Html.TextBox("BikeImage", "", new { type = "file" })<br />
+
+@Html.Label("Type", "Type")
+@Html.TextBox("Type")<br />
+
+@Html.Label("BikeSuitability", "BikeSuitability")
+@Html.TextBox("BikeSuitability")<br />
+
+<input type="submit" value="Create Holiday List" />
+}
